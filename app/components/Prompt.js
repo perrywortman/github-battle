@@ -2,7 +2,7 @@ var React = require('react')
 var PropTypes = React.PropTypes
 var transparentBg = require('../styles').transparentBg
 
-//functional stateless components
+//functional stateless component
 function Prompt(props){
   return(
     <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>

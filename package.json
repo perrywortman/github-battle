@@ -1,15 +1,20 @@
 {
   "name": "github-battle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Compare your Github profile with another user's. Built with React, React-Router, Axios and Webpack",
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
     "dev": "webpack-dev-server"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perrywortman/github-battle"
+  },
+  "author": "W. Perry Wortman",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.9.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
     "react-router": "^2.0.0-rc5"
