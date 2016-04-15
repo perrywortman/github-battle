@@ -1,15 +1,15 @@
 var React = require('react')
 var PropTypes = React.PropTypes
-var transparentBg = require('../styles').transparentBg
+var MainContainer = require('./MainContainer')
 
 //functional stateless component
 function Prompt(props){
   return(
-    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
+    <MainContainer>
       <h1>{props.header}</h1>
       <div className="col-sm-12">
         <form onSubmit={props.onSubmitUser}>
-          <div className="form-group">
+          <div className="form-group col-sm-6 col-sm-offset-3">
             <input
               className="form-control"
               placeholder="Github Username"
@@ -17,7 +17,7 @@ function Prompt(props){
               value={props.username}
               type="text" />
           </div>
-          <div className="form-group col-sm-4 col-sm-offset-4">
+          <div className="form-group col-sm-2 col-sm-offset-5">
             <button
               className="btn btn-block btn-success"
               type="submit">
@@ -26,7 +26,7 @@ function Prompt(props){
           </div>
         </form>
       </div>
-    </div>
+    </MainContainer>
   )
 }
 

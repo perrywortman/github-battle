@@ -4,11 +4,13 @@ var styles = require('../styles')
 var Link = require('react-router').Link
 var UserDetails = require('./UserDetails')
 var UserDetailsWrapper = require('./UserDetailsWrapper')
+var MainContainer = require('./MainContainer')
+var Loading = require('./Loading')
 
 function ConfirmBattle(props){
   return props.isLoading === true
-    ? <p>Loading...</p>
-    : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+    ? <Loading text='Finding Players' speed={200} />
+    : <MainContainer>
         <h1>Confirm Players</h1>
         <div className="col-sm-8 col-sm-offset-2">
           <UserDetailsWrapper header='Player One'>
@@ -32,7 +34,7 @@ function ConfirmBattle(props){
             </Link>
           </div>
         </div>
-      </div>
+      </MainContainer>
 }
 
 ConfirmBattle.propTypes = {
