@@ -1,5 +1,5 @@
 import React from 'react'
-const PropTypes = React.PropTypes
+import PropTypes from 'prop-types'
 import ConfirmBattle from '../components/ConfirmBattle'
 import githubHelpers from '../utils/githubHelpers'
 

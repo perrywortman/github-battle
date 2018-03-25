@@ -1,5 +1,5 @@
 import React from 'react'
-const PropTypes = React.PropTypes
+import PropTypes from 'prop-types'
 import styles from '../styles'
 import { Link } from 'react-router'
 import UserDetails from './UserDetails'

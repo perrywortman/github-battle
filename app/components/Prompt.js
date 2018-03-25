@@ -1,5 +1,5 @@
 import React from 'react'
-const PropTypes = React.PropTypes
+import PropTypes from 'prop-types'
 import MainContainer from './MainContainer'
 
 //functional stateless component
