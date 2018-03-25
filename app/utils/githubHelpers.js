@@ -1,6 +1,7 @@
 import axios from 'axios'
-const id = '68f7121b3463423d9f90'
-const sec = '7501c822adaf89df5e134e85a78d8505e43a054e'
+const apiKeys = require('../../apiKeys')
+const id = apiKeys.CLIENT_ID
+const sec = apiKeys.SECRET_ID
 const param = '?client_id=' + id + '&client_secret=' + sec
 
 function getUserInfo(username) {
@@ -53,7 +54,7 @@ var githubHelpers = {
     return axios.all([playerOneData, playerTwoData])
     .then(calculateScores)
     .catch(err => {
-      console.warn('Error in getPlayersInfo: ', err)
+      console.warn('Error in battle: ', err)
     })
   }
 }
