@@ -1,28 +1,29 @@
-var React = require('react')
-var ConfirmBattle = require('../components/ConfirmBattle')
-var githubHelpers = require('../utils/githubHelpers')
+import React from 'react'
+const PropTypes = React.PropTypes
+import ConfirmBattle from '../components/ConfirmBattle'
+import githubHelpers from '../utils/githubHelpers'
 
-var ConfirmBattleContainer = React.createClass({
+const ConfirmBattleContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
-  getInitialState: function(){
+  getInitialState: () => {
     return {
       isLoading: true,
       playersInfo: []
     }
   },
-  componentDidMount: function(){
-    var query = this.props.location.query
+  componentDidMount: function() {
+    const query = this.props.location.query
     githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
-    .then(function(players){
+    .then(function(players) {
       this.setState({
         isLoading: false,
         playersInfo: [players[0],players[1]]
       })
     }.bind(this))
   },
-  handleInitiateBattle: function(){
+  handleInitiateBattle: function() {
     this.context.router.push({
       pathname: '/results',
       state: {
@@ -30,7 +31,7 @@ var ConfirmBattleContainer = React.createClass({
       }
     })
   },
-  render: function(){
+  render: function() {
     return(
       <ConfirmBattle
         isLoading={this.state.isLoading}
@@ -40,4 +41,4 @@ var ConfirmBattleContainer = React.createClass({
   }
 })
 
-module.exports = ConfirmBattleContainer
+export default ConfirmBattleContainer

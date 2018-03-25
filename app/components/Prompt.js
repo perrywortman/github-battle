@@ -1,9 +1,9 @@
-var React = require('react')
-var PropTypes = React.PropTypes
-var MainContainer = require('./MainContainer')
+import React from 'react'
+const PropTypes = React.PropTypes
+import MainContainer from './MainContainer'
 
 //functional stateless component
-function Prompt(props){
+function Prompt(props) {
   return(
     <MainContainer>
       <h1>{props.header}</h1>
@@ -37,4 +37,4 @@ Prompt.propTypes = {
   username: PropTypes.string.isRequired
 }
 
-module.exports = Prompt
+export default Prompt

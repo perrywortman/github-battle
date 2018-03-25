@@ -1,4 +1,4 @@
-var styles = {
+const styles = {
   transparentBg: {
     background: 'transparent'
   },
@@ -7,4 +7,4 @@ var styles = {
   }
 }
 
-module.exports = styles
+export default styles

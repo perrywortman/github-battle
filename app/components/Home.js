@@ -1,10 +1,9 @@
-var React = require('react')
-var ReactRouter = require('react-router')
-var Link = ReactRouter.Link
-var MainContainer = require('./MainContainer')
+import React from 'react'
+import { Link } from 'react-router'
+import MainContainer from './MainContainer'
 
-var Home = React.createClass({
-  render: function(){
+class Home extends React.Component {
+  render() {
     return(
       <MainContainer>
         <h1>Github Battle</h1>
@@ -15,6 +14,6 @@ var Home = React.createClass({
       </MainContainer>
     )
   }
-})
+}
 
-module.exports = Home
+export default Home

@@ -1,7 +1,7 @@
-var React = require('react')
-var PropTypes = React.PropTypes
+import React from 'react'
+const PropTypes = React.PropTypes
 
-var styles = {
+const styles = {
   container: {
     position: 'fixed',
     left: 0,
@@ -18,47 +18,46 @@ var styles = {
   }
 }
 
-var Loading = React.createClass({
-  propTypes: {
-    text: PropTypes.string,
-    speed: PropTypes.number
-  },
-  getDefaultProps: function(){
-    return {
-      text: 'Loading',
-      speed: 300
+class Loading extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: props.text
     }
-  },
-  getInitialState: function(){
-    this.originalText = this.props.text
-    return {
-      text: this.props.text
-    }
-  },
-  componentDidMount: function(){
-    var stopper = this.originalText + '...'
-    this.interval = setInterval(function(){
+  }
+
+  componentDidMount() {
+    const stopper = this.props.text + '...'
+    this.interval = setInterval(function() {
       if(this.state.text === stopper){
-        this.setState({
-          text: this.originalText
-        })
+        this.setState({ text: this.props.text })
       } else {
-        this.setState({
-          text: this.state.text + '.'
-        })
+        this.setState({ text: this.state.text + '.' })
       }
     }.bind(this), this.props.speed)
-  },
-  componentWillUnmount: function(){
+  }
+
+  componentWillUnmount() {
     clearInterval(this.interval)
-  },
-  render: function(){
+  }
+
+  render() {
     return(
       <div style={styles.container}>
         <p style={styles.content}>{this.state.text}</p>
       </div>
     )
   }
-})
+}
 
-module.exports = Loading
+Loading.defaultProps = {
+  text: 'Loading',
+  speed: 300
+}
+
+Loading.propTypes = {
+  text: PropTypes.string,
+  speed: PropTypes.number
+}
+
+export default Loading
