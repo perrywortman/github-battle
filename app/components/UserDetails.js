@@ -1,11 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function UserDetails(user) {
-  return(
+  return (
     <div>
-      {!!user.score && <li className="list-group-item"><h3>Score: {user.score}</h3></li>}
-      <li className="list-group-item"><img src={user.info.avatar_url} className="img-rounded img-responsive"/></li>
+      {!!user.score && (
+        <li className="list-group-item">
+          <h3>Score: {user.score}</h3>
+        </li>
+      )}
+      <li className="list-group-item">
+        <img src={user.info.avatar_url} className="img-rounded img-responsive" />
+      </li>
       {user.info.name && <li className="list-group-item">Name: {user.info.name}</li>}
       <li className="list-group-item">Username: {user.info.login}</li>
       {user.info.location && <li className="list-group-item">Location: {user.info.location}</li>}
@@ -13,9 +19,13 @@ function UserDetails(user) {
       <li className="list-group-item">Followers: {user.info.followers}</li>
       <li className="list-group-item">Following: {user.info.following}</li>
       <li className="list-group-item">Public Repos: {user.info.public_repos}</li>
-      {user.info.blog && <li className="list-group-item">Blog: <a href={user.info.blog}>{user.info.blog}</a></li>}
+      {user.info.blog && (
+        <li className="list-group-item">
+          Blog: <a href={user.info.blog}>{user.info.blog}</a>
+        </li>
+      )}
     </div>
-  )
+  );
 }
 
 UserDetails.propTypes = {
@@ -25,12 +35,12 @@ UserDetails.propTypes = {
     blog: PropTypes.string,
     company: PropTypes.string,
     followers: PropTypes.number.isRequired,
-    following: PropTypes.number. isRequired,
+    following: PropTypes.number.isRequired,
     location: PropTypes.string,
     login: PropTypes.string.isRequired,
     name: PropTypes.string,
     public_repos: PropTypes.number.isRequired
   })
-}
+};
 
-export default UserDetails
+export default UserDetails;

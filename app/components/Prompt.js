@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import MainContainer from './MainContainer'
+import React from 'react';
+import PropTypes from 'prop-types';
+import MainContainer from './MainContainer';
 
 //functional stateless component
 function Prompt(props) {
-  return(
+  return (
     <MainContainer>
       <h1>{props.header}</h1>
       <div className="col-sm-12">
@@ -15,19 +15,18 @@ function Prompt(props) {
               placeholder="Github Username"
               onChange={props.onUpdateUser}
               value={props.username}
-              type="text" />
+              type="text"
+            />
           </div>
           <div className="form-group col-sm-2 col-sm-offset-5">
-            <button
-              className="btn btn-block btn-success"
-              type="submit">
+            <button className="btn btn-block btn-success" type="submit">
               Continue
             </button>
           </div>
         </form>
       </div>
     </MainContainer>
-  )
+  );
 }
 
 Prompt.propTypes = {
@@ -35,6 +34,6 @@ Prompt.propTypes = {
   onSubmitUser: PropTypes.func.isRequired,
   onUpdateUser: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired
-}
+};
 
-export default Prompt
+export default Prompt;

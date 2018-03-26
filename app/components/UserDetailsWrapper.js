@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function UserDetailsWrapper(props) {
-  return(
+  return (
     <div className="col-sm-6">
       <p className="lead">{props.header}</p>
       {props.children}
     </div>
-  )
+  );
 }
 
-export default UserDetailsWrapper
+export default UserDetailsWrapper;
