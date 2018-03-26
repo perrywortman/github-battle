@@ -18,7 +18,7 @@ const apiKeys = {
   SECRET_ID: ''
 }
 
-export default apiKeys
+module.exports = apiKeys
 ```
 
 ### Development
